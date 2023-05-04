@@ -36,14 +36,15 @@ export default defineConfig((env) => {
       port: 1002,
       open: false,
       proxy: {
-        '/api': {
+        '/v1/api': {
           target: viteEnv.VITE_APP_API_BASE_URL,
           changeOrigin: true, // 允许跨域
-          rewrite: path => path.replace('/api/', '/'),
+          rewrite: path => path.replace('/v1/api/', '/'),
         },
       },
     },
     build: {
+      assetsDir: 'v1/static',
       reportCompressedSize: false,
       sourcemap: false,
       commonjsOptions: {

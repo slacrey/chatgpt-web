@@ -219,7 +219,7 @@ async function handleResetPassword() {
             </NButton>
           </NTabPane>
 
-          <NTabPane v-if="authStore.session && authStore.session.allowRegister && false" name="register" :tab="$t('common.register')">
+          <NTabPane v-if="authStore.session && authStore.session.allowRegister" name="register" :tab="$t('common.register')">
             <NInput v-model:value="username" type="text" :placeholder="$t('common.email')" class="mb-2" />
             <NInput v-model:value="password" type="password" :placeholder="$t('common.password')" class="mb-2" @input="handlePasswordInput" />
             <NInput
