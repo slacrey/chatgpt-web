@@ -51,9 +51,7 @@ COPY --from=frontend /app/replace-title.sh /app
 
 RUN chmod +x /app/replace-title.sh
 
-COPY --from=frontend /app/dist /app/public
-
-COPY --from=frontend /app/dist/v1 /app/public
+COPY --from=frontend /app/dist /app/public/v1/
 
 COPY --from=backend /app/build /app/build
 
