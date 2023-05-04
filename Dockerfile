@@ -53,6 +53,8 @@ RUN chmod +x /app/replace-title.sh
 
 COPY --from=frontend /app/dist /app/public
 
+COPY --from=frontend /app/dist/v1 /app/public
+
 COPY --from=backend /app/build /app/build
 
 COPY --from=backend /app/src/utils/templates /app/build/templates
