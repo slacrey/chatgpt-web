@@ -83,7 +83,8 @@ async function onConversation() {
     +uuid,
     {
       uuid: chatUuid,
-      dateTime: new Date().toLocaleString(),
+      dateTime: new Date().toLocaleString('zh', { hour12: false }),
+      // dateTime: new Date().toLocaleString(),
       text: message,
       inversion: true,
       error: false,
@@ -106,7 +107,7 @@ async function onConversation() {
     +uuid,
     {
       uuid: chatUuid,
-      dateTime: new Date().toLocaleString(),
+      dateTime: new Date().toLocaleString('zh', { hour12: false }),
       text: '',
       loading: true,
       inversion: false,
@@ -148,7 +149,7 @@ async function onConversation() {
               +uuid,
               dataSources.value.length - 1,
               {
-                dateTime: new Date().toLocaleString(),
+                dateTime: new Date().toLocaleString('zh', { hour12: false }),
                 text: lastText + (data.text ?? ''),
                 inversion: false,
                 error: false,
@@ -212,7 +213,7 @@ async function onConversation() {
       +uuid,
       dataSources.value.length - 1,
       {
-        dateTime: new Date().toLocaleString(),
+        dateTime: new Date().toLocaleString('zh', { hour12: false }),
         text: errorMessage,
         inversion: false,
         error: true,
@@ -249,7 +250,7 @@ async function onRegenerate(index: number) {
     +uuid,
     index,
     {
-      dateTime: new Date().toLocaleString(),
+      dateTime: new Date().toLocaleString('zh', { hour12: false }),
       text: '',
       inversion: false,
       error: false,
@@ -291,7 +292,7 @@ async function onRegenerate(index: number) {
               +uuid,
               index,
               {
-                dateTime: new Date().toLocaleString(),
+                dateTime: new Date().toLocaleString('zh', { hour12: false }),
                 text: lastText + (data.text ?? ''),
                 inversion: false,
                 error: false,
@@ -336,7 +337,7 @@ async function onRegenerate(index: number) {
       +uuid,
       index,
       {
-        dateTime: new Date().toLocaleString(),
+        dateTime: new Date().toLocaleString('zh', { hour12: false }),
         text: errorMessage,
         inversion: false,
         error: true,
@@ -576,6 +577,7 @@ onUnmounted(() => {
                   v-for="(item, index) of dataSources"
                   :key="index"
                   :date-time="item.dateTime"
+                  :new-message="false"
                   :text="item.text"
                   :inversion="item.inversion"
                   :usage="item && item.usage || undefined"
