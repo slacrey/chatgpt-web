@@ -25,6 +25,7 @@ export default defineConfig((env) => {
   const viteEnv = loadEnv(env.mode, process.cwd()) as unknown as ImportMetaEnv
 
   return {
+    base: '/v1',
     resolve: {
       alias: {
         '@': path.resolve(process.cwd(), 'src'),
@@ -44,7 +45,7 @@ export default defineConfig((env) => {
       },
     },
     build: {
-      assetsDir: 'v1/v1/static',
+      assetsDir: 'v1/static',
       reportCompressedSize: false,
       sourcemap: false,
       commonjsOptions: {
