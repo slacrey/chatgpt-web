@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "/v1",
+    "baseUrl": ".",
     "outDir": "build",
     "noEmit": true
   },
