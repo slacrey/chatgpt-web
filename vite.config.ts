@@ -44,6 +44,7 @@ export default defineConfig((env) => {
       },
     },
     build: {
+      outDir: './dist/v1',
       assetsDir: 'v1/v1/static',
       reportCompressedSize: false,
       sourcemap: false,
